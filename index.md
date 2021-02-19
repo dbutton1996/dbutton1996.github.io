@@ -1,7 +1,7 @@
 # David Button's Computer Science ePortfolio
 
-** Professional self-assessment goes here **
+**Professional self-assessment goes here**
 
-** Enhanced artifacts go here **
+**Enhanced artifacts go here**
 
-** Artifact narratives go here**
+**Artifact narratives go here**
