@@ -8,7 +8,7 @@ the code to be more efficient and easier to understand. The purpose of this prog
 **Original Code**
 
 AuthenticationSystem.java
-```Java
+```java
 package authentication.system;
 
 import java.security.MessageDigest;
@@ -94,7 +94,7 @@ public class AuthenticationSystem {
 }
 ```
 credentials.java
-```Java
+```java
 package authentication.system;
 
 public class credentials {
@@ -156,7 +156,7 @@ When porting this program to Python, I made care to reduce the number of variabl
 **Updated Code**
 
 AuthenticationSystem.py
-```Python
+```python
 import hashlib
 import ast
 
