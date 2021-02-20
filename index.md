@@ -8,7 +8,8 @@ Throughout my various classes, I have come to understand the importance and inte
 
 This ePortfolio will demonstrate my understanding of software design and engineering, algorithms and data structures, and databases through two artifacts. The first artifact is an authentication system written in Python in which the user is prompted to enter a username and password. The entered credentials are then compared with credentials that have been securely stored in a separate file. This artifact showcases both software design and engineering as well as algorithms and data structures by being written in the Python language which I hadn’t previously worked with, and by utilizing efficient and effective data structures to store and manipulate data. The second artifact is a JavaScript program created with Node.js that connects to a remotely hosted MySQL server and allows the user to easily create, read, update, or delete tables in a database. This artifact showcases my understanding of databases by utilizing MySQL functions and JavaScript to automate most of the functions a user would have when working with a database.
 
-[Artifact One](./ArtifactOne.md)
+[Artifact One (Software Design and Engineering)](./ArtifactOne.md)
 
+[Artifact Two (Algorithm and Data Structures)](./ArtifactTwo.md)
 
-**Artifact narratives go here**
+[Artifact Three (Databases)](./ArtifactThree.md)
