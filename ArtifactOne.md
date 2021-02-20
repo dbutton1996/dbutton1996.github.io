@@ -151,7 +151,7 @@ public class credentials {
 }
 ```
 
-When porting this program to Python, I made care to reduce the number of variables to those required for the program to run. Additionally, all the code was condensed into a single file and the user data was taken out of the program files and stored in two seperate .txt files.
+When porting this program to Python, I made care to reduce the number of variables to those required for the program to run. Additionally, all the code was condensed into a single file and the user data was taken out of the program and instead is stored in two seperate .txt files.
 
 **Updated Code**
 
