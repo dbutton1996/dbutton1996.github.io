@@ -1,6 +1,6 @@
 **Artifact One**
 
-(Demonstrates Software Design and Engineering, Algorithms, and Data Structures)
+**(Demonstrates Software Design and Engineering, Algorithms, and Data Structures)**
 
 For this artifact, I took the Authentication System that I created in Java for my IT 145: Foundation in Application Development course and ported it to Python while updating
 the code to be more efficient and easier to understand. As one of my first Java programs, the original contained many inefficiencies and poor design choices, including
