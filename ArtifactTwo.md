@@ -252,6 +252,6 @@ When I first chose this enhancement, I didn’t actually know what data structur
 
 [Home Page](./Home.md)
 
-[Artifact Two (Algorithm and Data Structures)](./ArtifactTwo.md)
+[Software Design and Engineering](./ArtifactOne.md)
 
-[Artifact Three (Databases)](./ArtifactThree.md)
+[Databases](./ArtifactThree.md)
