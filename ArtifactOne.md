@@ -1,4 +1,4 @@
-## Artifact One
+**Artifact One**
 
 **(Demonstrates Software Design and Engineering)**
 
