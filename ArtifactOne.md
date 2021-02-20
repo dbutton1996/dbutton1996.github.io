@@ -252,6 +252,6 @@ I learned a few things while working on this enhancement, the biggest of which i
 
 [Home Page](./Home.md)
 
-[Artifact Two (Algorithm and Data Structures)](./ArtifactTwo.md)
+[Algorithms and Data Structures](./ArtifactTwo.md)
 
-[Artifact Three (Databases)](./ArtifactThree.md)
+[Databases](./ArtifactThree.md)
