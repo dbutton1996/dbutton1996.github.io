@@ -12,6 +12,6 @@ This ePortfolio will demonstrate my understanding of software design and enginee
 
 [Software Design and Engineering](./ArtifactOne.md)
 
-[Algorithm and Data Structures](./ArtifactTwo.md)
+[Algorithms and Data Structures](./ArtifactTwo.md)
 
 [Databases](./ArtifactThree.md)
