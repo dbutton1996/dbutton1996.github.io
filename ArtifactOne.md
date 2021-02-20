@@ -6,6 +6,8 @@ For this artifact, I took the Authentication System that I created in Java for m
 the code to be more efficient and easier to understand. As one of my first Java programs, the original contained many inefficiencies and poor design choices, including
 splitting the code into two seperate files, storing data within the program itself, and storing user data in multiple arrays where desyncs could easily occure.
 
+**Original Code**
+
 AuthenticationSystem.java
 ```Java
 package authentication.system;
