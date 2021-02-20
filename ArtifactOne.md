@@ -229,7 +229,7 @@ while totalTries < allowedTries:
 
 Credentials.txt
 ```
-{'username': 'griffinKeyes', 'password': 'b1fd9f7653e93870499521cff85ba1ddaebe1cf9d781bf27b6de23f4e437d29e', 'salt': 'a0a1f286333eea9f04e76ecd72ae675aae653d7d72fbb7b0591560f32d815583', 'role': 'zookeeper'}
+{'username': 'griffinKeyes', 'password': '438c7bae7b312cfcd5f6260236346f9fb04acaa69fed60013ef14dcc82e84595', 'salt': '7W5gBDZTv!$8Nc2%4$Exzyf9k&W56JWe*%24o32FM&!uikMaLUja7WGqJ$fgM*NSpkQbq2DNF@jT5Vq6Tty7uP3iuukh&5d&AxH@km5rXpQB$nXpnbKczQdksMMXz*Jf', 'role': 'zookeeper'}
 {'username': 'rosarioDawson', 'password': 'ced5282509ce44a4d42f34979cd713e7e119e1a7b47fedc1c5d3966f45e0d47e', 'salt': 'l0P5&BN4yGEYuBJcQHNy03XBkN$26I#gnzdzwHJia2Akjl9f3x7EZJHP4ZMBU42LmoIKj*QX03oGy#@7f6ZfKzTLKPpYGmpS83XS!t8@5d#4^0CA7ZZtS%R%h9yr*23s', 'role': 'admin'}
 {'username': 'bernieGorilla', 'password': '1125a825d878fa0f61185e675f116b08547e4d30db40706876f6764fa819fee6', 'salt': 'z5c$s9*q#m1GAvrUmIZ$Osc&Z6nluOQPQN2Vup*LwJQEIImuOMv!CMvh$zR2!O22PeuFB@Z&QdCLnq5F34AvDoh*Q&^BcUAORl%2nPJ3Q1P#3oQaTTUQ!I!^LNC62PlH', 'role': 'veterinarian'}
 {'username': 'donaldMonkey', 'password': 'a06997284d4ddb3a6cb2a867c54c8d8519115630b49233db26f2e4325b9979b2', 'salt': '4GYfkbtx1oHI8jeW6ANbR7WgasA3BMcv$5V9$B&MIPNp20$RSjK!m4k!wwX@%^ytJsS2h2m!vRGtZ!%zM&$vdm@u2G^wLuut4IPgmG9K^0l5X6FGZP^fIEbULgEmZ*2X', 'role': 'zookeeper'}
