@@ -250,6 +250,8 @@ I chose to include this item in my ePortfolio because the original version of th
 
 When I first chose this enhancement, I didn’t actually know what data structures Python included, or which one would be the best choice for storing user credentials, I simply knew my old series of arrays was not the best choice. Before I began the enhancement, I had to perform research on the different Python data structures and determine which one I wanted to use. Since I hadn’t used dictionaries before, I also had to research how to work with the data structure so I could actually use the data being stored in it. While this process ended up not being particularly difficult, I think it highlights the fact that nobody understands every aspect of a programming language, so being able to look up information and implement it in your programs is an important part of being a programmer. The biggest challenge I faced was figuring out how to correctly read data from a dictionary, but thanks to the vast resources available on the internet, this challenge wasn’t too big of a hinderance as I found many different examples showing different ways to utilize them, including the way I needed to for my program.
 
+**Artifacts**
+
 [Home Page](./Home.md)
 
 [Software Design and Engineering](./ArtifactOne.md)
