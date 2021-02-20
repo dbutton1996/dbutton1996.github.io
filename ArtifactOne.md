@@ -1,10 +1,9 @@
 **Artifact One**
 
-**(Demonstrates Software Design and Engineering, Algorithms, and Data Structures)**
+**(Demonstrates Software Design and Engineering)**
 
 For this artifact, I took the Authentication System that I created in Java for my IT 145: Foundation in Application Development course and ported it to Python while updating
-the code to be more efficient and easier to understand. As one of my first Java programs, the original contained many inefficiencies and poor design choices, including
-splitting the code into two seperate files, storing data within the program itself, and storing user data in multiple arrays where desyncs could easily occure.
+the code to be more efficient and easier to understand. The purpose of this program is to prompt the user for a username and password, and then display a specific line of text depending on the credentials entered. Additionally, if invalid credentials are entered three times in a row, then the program will exit for security purposes. As one of my first Java programs, the original contained many inefficiencies, such as the unnecessary variables "looping" and "password", and poor design choices such as splitting the program into two seperate Java files and hard coding user data in the Java program itself.
 
 **Original Code**
 
@@ -150,4 +149,97 @@ public class credentials {
         }
     }
 }
+```
+
+When porting this program to Python, I made care to reduce the number of variables to those required for the program to run. Additionally, all the code was condensed into a single file and the user data was taken out of the program files and stored in two seperate .txt files.
+
+**Updated Code**
+
+AuthenticationSystem.py
+```Python
+import hashlib
+import ast
+
+def loadCredentials(fileName): #Reads from .txt file and puts file's data in a list
+    try:
+        inputFile = open(fileName, "r")
+        lines = inputFile.readlines()
+        
+        objects = []
+        for line in lines:
+            objects.append(ast.literal_eval(line))
+        return objects
+    except IOError:
+        print("File not found. Contact system administrator.")
+        exit()
+
+username = ""
+hashedPassword = ""
+logout = ""
+currentRole = ""
+globalPasswordSalt = "BeaGGSXg^HzaqoxD4Ubix!jEbwieo7jK@dTndU!F^JH3efE*HLH45DU%rE97LUZMBSP$kAo!34$SJSEKMs*8ZxveNk7#zcXJ%d*ydee@H9QHqNge$T&3ApzioQhcnm%h" #Global password salt, added to each user's password
+individualPasswordSalt = "" #Individual password salt, unique for each user
+totalTries = 0
+allowedTries = 3
+validInfo = False
+
+credentialsList = loadCredentials("Credentials.txt") #Load valid credentials from "Credentials.txt"
+rollsList = loadCredentials("Roles.txt") #Load role messages from "Roles.txt"
+    
+while totalTries < allowedTries:
+    logout = ""
+    currentRole = ""
+    validInfo = False
+        
+    username = input("Enter your username (Enter \"exit\" to exit): ")
+    if username == "exit" or username == "Exit": #If the user enters "exit" for their username, close the program
+        exit()
+    
+    for i in range(len(credentialsList)): #Find user's unique salt based on the username they entered
+        if username == credentialsList[i]['username']:
+            passwordSalt = credentialsList[i]['salt']
+                
+    hashedPassword = hashlib.sha256((input("Enter your password: ") + individualPasswordSalt + globalPasswordSalt).encode()) #Takes user's password, adds salt, then Hashes password with SHA-256 encryption
+    
+    for i in range(len(credentialsList)): #Check if hashed password is in "Credentials.txt", if so, then check if inputted username matches for that user, if both are true, log user in
+        if hashedPassword.hexdigest() == credentialsList[i]['password'] and username == credentialsList[i]['username']:
+            validInfo = True
+            currentRole = credentialsList[i]['role']
+    
+    totalTries += 1
+        
+    if validInfo: #Once valid credentials are entered, search "Roles.txt" for user's role message.
+        for j in range(len(rollsList)):
+            if currentRole == rollsList[j]['role']:
+                print(rollsList[j]['message'])
+                while logout != "logout": #Repeatably ask user to type "logout" to logout of their account
+                    logout = input("Type \"logout\" to logout: ")
+                totalTries = 0
+            if j == len(rollsList) - 1: #If user's role isn't found in "Roles.txt", display error message
+                print("System role not found. Contact system administrator.")
+
+    else:    
+        print("Invalid Credentials")
+        print("Tries remaining: ", allowedTries - totalTries)
+            
+    if totalTries >= allowedTries: #Exit program if too many failed login attempts are entered in a row (Default = 3)
+        input("Too many login attempts. Press \'Enter\' to close program.")
+        exit()
+```
+
+Credentials.txt
+```
+{'username': 'griffinKeyes', 'password': 'b1fd9f7653e93870499521cff85ba1ddaebe1cf9d781bf27b6de23f4e437d29e', 'salt': 'a0a1f286333eea9f04e76ecd72ae675aae653d7d72fbb7b0591560f32d815583', 'role': 'zookeeper'}
+{'username': 'rosarioDawson', 'password': 'ced5282509ce44a4d42f34979cd713e7e119e1a7b47fedc1c5d3966f45e0d47e', 'salt': 'l0P5&BN4yGEYuBJcQHNy03XBkN$26I#gnzdzwHJia2Akjl9f3x7EZJHP4ZMBU42LmoIKj*QX03oGy#@7f6ZfKzTLKPpYGmpS83XS!t8@5d#4^0CA7ZZtS%R%h9yr*23s', 'role': 'admin'}
+{'username': 'bernieGorilla', 'password': '1125a825d878fa0f61185e675f116b08547e4d30db40706876f6764fa819fee6', 'salt': 'z5c$s9*q#m1GAvrUmIZ$Osc&Z6nluOQPQN2Vup*LwJQEIImuOMv!CMvh$zR2!O22PeuFB@Z&QdCLnq5F34AvDoh*Q&^BcUAORl%2nPJ3Q1P#3oQaTTUQ!I!^LNC62PlH', 'role': 'veterinarian'}
+{'username': 'donaldMonkey', 'password': 'a06997284d4ddb3a6cb2a867c54c8d8519115630b49233db26f2e4325b9979b2', 'salt': '4GYfkbtx1oHI8jeW6ANbR7WgasA3BMcv$5V9$B&MIPNp20$RSjK!m4k!wwX@%^ytJsS2h2m!vRGtZ!%zM&$vdm@u2G^wLuut4IPgmG9K^0l5X6FGZP^fIEbULgEmZ*2X', 'role': 'zookeeper'}
+{'username': 'jeromeGrizzlybear', 'password': 'f96e082a8efe786c6948445401ba8ebe283cc0f3a69167ac1947f9c5cd58d380', 'salt': 'pz5mc21*rZkQTmHd0dyuGO4E*z^$fVGaZloN8h%6EOJjAs%Lr@x#%RuKdH5LL@MH0feV7RrjrMUQfCL4TBM0N3L&!NCv1NYbp^XHju4NE99kAHu&qit^J8SvQpXX#RRG', 'role': 'veterinarian'}
+{'username': 'bruceGrizzlybear', 'password': '0749eeaf62f49edeec49700d1bd7742824784f1907ebbe2d81fb6e1aa572e24c', 'salt': '50%TPGU2fp*T!N28oW^T6taI!3a6Za7zzuGNJ3ozna6#nm*kTxS$mSYwLmp%9TQph8pMTv%a24AbvG87WyDpN04Gzu1P%L^yg00!1Ug@&PzQz3Ycm8nIpQpaA$DgUhq@', 'role': 'admin'}
+```
+
+Roles.txt
+```
+{'role':'admin', 'message': 'Hello, System Admin! As administrator, you have access to the zoo main computer system. This allows you to monitor users in the system and their roles.'}
+{'role': 'zookeeper', 'message': 'Hello, Zookeeper! As zookeeper, you have access to all of the animal information and their daily monitoring logs. This allows you to track their feeding habits, habitat conditions, and general welfare.'}
+{'role': 'veterinarian', 'message': 'Hello, Veterinarian! As veterinarian, you have access to all of the animal health records. This allows you to view each animal medical history and current treatments/illnesses (if any), and to maintain a vaccination log.'}
 ```
